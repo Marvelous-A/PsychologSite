@@ -8,6 +8,12 @@ header {
     color: #29b981;
 }
 
+#admin {
+    position:relative;
+    left: 680;
+    bottom: 65px;
+}
+
 body {
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
@@ -31,6 +37,7 @@ body {
 
 #name {
     color: #000;
+    /*border: solid 1px #000;*/
 }
 
 #Specifications2p {
