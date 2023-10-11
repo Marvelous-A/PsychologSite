@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href={% static "css/card_css.css" %}>
-    <script src={% static "css/card_js.js" %}></script>
+    <link rel="stylesheet" href={% static "css/card_css(1).css" %}>
+    <link href={%static "css/card_js.js"%}>
     
 
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style>
@@ -15,7 +15,7 @@
 <body>
     <header>
         <p>alter</p>
-        <button id='admin' link = 'http://127.0.0.1:8000/admin'>admin</button>
+        <div id='admin'><a href='http://127.0.0.1:8000/admin'>admin</a></div>
     </header>
 
     {% block content %}

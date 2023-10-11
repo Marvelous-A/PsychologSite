@@ -1,3 +1,3 @@
-document.querySelector('#admin').onclick = function(){
+document.querySelector('#price').onclick = function(){
     alert('fsdfs')
 }

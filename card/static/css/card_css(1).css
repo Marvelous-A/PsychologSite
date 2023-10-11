@@ -9,9 +9,13 @@ header {
 }
 
 #admin {
-    position:relative;
-    left: 680;
-    bottom: 65px;
+    width: 100px;
+    /*border: solid 2px #29b981;*/
+    background-color: #29b981;
+    border-radius: 8px;
+    position: relative;
+    left: 1350px;
+    bottom: 60px;
 }
 
 body {
@@ -126,6 +130,16 @@ body {
 #PsychologistQuestion {
     border: solid 1px #000;
     background-color: #ffffff;
+}
+
+#discription {
+    height: 200px;
+    width: 100%;
+    background-color: #f6f6f5;  
+    position: relative;
+    top: 100px;
+    padding-top: 20px;
+    padding-left: 350px;
 }
 
 #futor {

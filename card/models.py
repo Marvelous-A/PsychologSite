@@ -9,7 +9,7 @@ class Author(models.Model):
     validate_for_phonenumbers = models.BooleanField(default=False)
     age = models.IntegerField(null=True)
     profession = models.CharField(max_length=300, null=True)
-    #amount_reception = models.CharField(max_length=6, null=True)
+    #amount_reception = models.CharField(default=0)
 
     def validate_phonenumbers(self):
         import phonenumbers
