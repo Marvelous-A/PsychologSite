@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href={% static "css/card_css(1).css" %}>
-    <link href={%static "css/card_js.js"%}>
+    <link rel="stylesheet" href={% static "css/base_css.css" %}>
     
-
+    
     <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style>
     <title>ps</title>
 </head>
 <body>
     <header>
         <p>alter</p>
-        <div id='admin'><a href='http://127.0.0.1:8000/admin'>admin</a></div>
+        <div id='admin'><p>admin</p></div>
     </header>
 
     {% block content %}
@@ -23,5 +22,6 @@
 
     <div id='futor'>
     </div>
+    <script src={%static "js/card_js(1).js"%}></script>
 </body>
 </html>
