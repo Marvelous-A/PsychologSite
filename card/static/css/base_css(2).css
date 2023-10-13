@@ -172,6 +172,10 @@ body {
     margin-left: 25px;
 }
 
+.check_type_therapy {
+    border: solid 4px #29b981;
+}
+
 #session_information {
     height: 180px;
     box-shadow: 1px 1px 20px #d8d8d8;

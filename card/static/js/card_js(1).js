@@ -1,12 +1,18 @@
+var typeIndividual = document.getElementById('individual')
+var typeFamily = document.getElementById('Family')
+
 document.querySelector('#admin').onclick = function(){
     window.location.replace('http://127.0.0.1:8000/admin/')
 }
 
-document.querySelector('#individual').addEventListener('click', function(){
-    alert('ojsdfij')
+typeIndividual.addEventListener('click', function(){
+    typeFamily.classList.remove('check_type_therapy')
+    typeIndividual.classList.add('check_type_therapy')
 })
-document.querySelector('#Family').addEventListener('click', function(){
-    alert('ojsdfij')
+
+typeFamily.addEventListener('click', function(){
+    typeIndividual.classList.remove('check_type_therapy')
+    typeFamily.classList.add('check_type_therapy')
 })
 
 document.querySelector('.week_day_num').addEventListener('mouseenter', function(){

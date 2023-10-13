@@ -37,6 +37,8 @@ class Order(models.Model):
     phone = models.CharField(max_length=20, default='79999999999', null=True)
     email = models.CharField(max_length=30, null=True)
     description = models.CharField(max_length=400, null=True)
+    date = models.DateField(null=True)
+    view_lesson = models.BooleanField(default=False)
 
     def validate_phone_number(self):
         import phonenumbers
