@@ -5,21 +5,26 @@
         <h1>Запись к психологу</h1>
         <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
     </div>
-    <div class='type_therapy' id='individual'>
-        <h3>Индивидуально</h3>
-        <p>{{Author_features.amount_reception}} ₽</p>
-        <img class='foto_appointment' src="https://back.alter.ru/images/one-person-session.svg" alt='фото'\>
-    </div>
-    <div class='type_therapy' id='Family'>
-        <h3>С партнёром/Семьёй</h3>
-        <p>{{Author_features.amount_reception}} ₽</p>
-        <img class='foto_appointment' src="https://back.alter.ru/images/family-session.svg" alt='фото'\>
-    </div>
-    <div class='type_therapy' id='session_information'>
-        <h4>Информация о сессии</h4>
-        <h4 id='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
-        <div class='further'>
-            <a>Дальше</a>
+    <div class='center'>
+        <div class='type_therapy' id='individual'>
+            <h3>Индивидуально</h3>
+            <p>{{Author_features.amount_reception}} ₽</p>
+            <img class='foto_appointment' src="https://back.alter.ru/images/one-person-session.svg" alt='фото'\>
+        </div>
+        <div class='type_therapy' id='Family'>
+            <h3>С партнёром/Семьёй</h3>
+            <p>{{Author_features.amount_reception}} ₽</p>
+            <img class='foto_appointment' src="https://back.alter.ru/images/family-session.svg" alt='фото'\>
+        </div>
+        <div class='type_therapy' id='session_information'>
+            <h4>Информация о сессии</h4>
+            <h4 id='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+            <div id='further_1'>
+                <a href = "{% url 'add_order_2' %}">Дальше</a>
+            </div>
+            <div id='warranty_1'>
+                <h4>Вы получаете гарантии Alter</h4>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -13,3 +13,11 @@ def add_order_1(request):
     reception = Order.objects.last()
     features = Author.objects.last()
     return render(request, 'card/add_order_1.html', {'Author_features': features, 'Order_reception': reception})
+
+def add_order_2(request):
+    features = Author.objects.last()
+    return render(request, 'card/add_order_2.html', {'Author_features': features})
+
+def add_order_3(request):
+    features = Author.objects.last()
+    return render(request, 'card/add_order_3.html', {'Author_features': features})

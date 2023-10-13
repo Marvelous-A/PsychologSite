@@ -1,0 +1,34 @@
+{% extends "card/base.html" %}
+
+{% block content %}
+    <div id='appointment_psychologist'>
+        <h1>Запись к психологу</h1>
+        <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
+    </div>
+    <div class='center'>
+        <div class='type_therapy' id='personal_data'>
+            <div class='personal_data_type'>
+                <h4>Номер телефона<h4>
+                <input class='data'>
+            </div>
+            <div class='personal_data_type'>
+                <h4>Почта<h4>
+                <input class='data'>
+            </div>
+            <div class='personal_data_type'>
+                <h4>Имя<h4>
+                <input class='data'>
+            </div>
+        </div>
+        <div class='type_therapy' id='session_information_2'>
+            <h4>Информация о сессии</h4>
+            <h4 id='Cost_h4_2'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+            <div id='further_2'>
+                <a href = "{% url 'add_order_2' %}">Перейти к оплате</a>
+            </div>
+            <div id='warranty_2'>
+                <h4>Вы получаете гарантии Alter</h4>
+            </div>
+        </div>
+    </div>
+{% endblock %}

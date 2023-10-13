@@ -42,7 +42,7 @@ body {
 
 .foto_appointment {
     position: relative;
-    top: 60px;
+    top: 40px;
 }
 
 #name {
@@ -160,7 +160,7 @@ body {
 
 .type_therapy {
     height: 320px;
-    width: 300px;
+    width: 320px;
     /*border: solid 2px #000;*/
     box-shadow: 1px 1px 20px #d8d8d8;
     border-radius: 8px;
@@ -178,7 +178,7 @@ body {
     border-radius: 8px;
 }
 
-.further {
+#further_1 {
     width: 200px;
     text-align: center;
     background-color: #29b981;
@@ -189,12 +189,124 @@ body {
     top: 28%;
 }
 
+#further_1 a {
+    color: #fff;
+}
+
 #Cost_h4 {
     border-top: solid 1px #dcdcdc;
     padding-top: 10px;
     padding-left: 10px;
     position: relative;
     top: 20%;
+}
+
+#warranty_1 {
+    width: 300px;
+    background-color: #e6f5ee;
+    text-align: center;
+    border-radius: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: relative;
+    right: 10px;
+    top: 40%;
+}
+
+#session_information_2 {
+    height: 220px;
+    box-shadow: 1px 1px 20px #d8d8d8;
+    border-radius: 8px;
+}
+
+#Cost_h4_2 {
+    border-top: solid 1px #dcdcdc;
+    padding-top: 10px;
+    padding-left: 10px;
+    position: relative;
+    top: 35%;
+}
+
+#further_2 {
+    width: 200px;
+    text-align: center;
+    background-color: #29b981;
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+    left: 15%;
+    top: 40%;
+}
+
+#warranty_2 {
+    width: 300px;
+    background-color: #e6f5ee;
+    text-align: center;
+    border-radius: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: relative;
+    right: 10px;
+    top: 50%;
+}
+
+#further_2 a {
+    color: #fff;
+}
+
+#calendar {
+    height: 500px;
+    width: 665px;
+    padding-left: 20px;
+}
+
+.weeks{
+    padding-top: 60px;
+}
+
+.week_day {
+    height: 40px;
+    width: 40px;
+    color: #848691;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 7%;
+    position: relative;
+    float: left;
+}
+
+.week_day_num {
+    height: 40px;
+    width: 40px;
+    color: #848691;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 7%;
+    position: relative;
+    float: left;
+}
+
+#personal_data {
+    height: 500px;
+    width: 665px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.personal_data_type {
+    margin-bottom: 40px;
+}
+
+.data {
+    height: 40px;
+    width: 100%;
+    border: solid 2px #dcdcdc;
+    border-radius: 8px;
+}
+
+.center {
+    margin: 0 auto;
 }
 
 #futor {

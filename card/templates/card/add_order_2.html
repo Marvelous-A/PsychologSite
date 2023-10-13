@@ -1,5 +1,50 @@
 {% extends "card/base.html" %}
 
 {% block content %}
-    
+    <div id='appointment_psychologist'>
+        <h1>Запись к психологу</h1>
+        <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
+    </div>
+    <div class='center'>
+        <div class='type_therapy' id='calendar'>
+            <h3>Выберите время</h3>
+            <div class='weeks'>
+                <div class="week_day">пн</div>
+                <div class="week_day">вт</div>
+                <div class="week_day">ср</div>
+                <div class="week_day">чт</div>
+                <div class="week_day">пт</div>
+                <div class="week_day">сб</div>
+                <div class="week_day">вс</div>
+            </div>
+            <div class='weeks'>
+                <div class="week_day_num">пн</div>
+                <div class="week_day_num">вт</div>
+                <div class="week_day_num">ср</div>
+                <div class="week_day_num">чт</div>
+                <div class="week_day_num">пт</div>
+                <div class="week_day_num">сб</div>
+                <div class="week_day_num">вс</div>
+            </div>
+            <div class='weeks'>
+                <div class="week_day_num">пн</div>
+                <div class="week_day_num">вт</div>
+                <div class="week_day_num">ср</div>
+                <div class="week_day_num">чт</div>
+                <div class="week_day_num">пт</div>
+                <div class="week_day_num">сб</div>
+                <div class="week_day_num">вс</div>
+            </div>
+        </div>
+        <div class='type_therapy' id='session_information_2'>
+            <h4>Информация о сессии</h4>
+            <h4 id='Cost_h4_2'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+            <div id='further_2'>
+                <a href = "{% url 'add_order_3' %}">Дальше</a>
+            </div>
+            <div id='warranty_2'>
+                <h4>Вы получаете гарантии Alter</h4>
+            </div>
+        </div>
+    </div>
 {% endblock %}
