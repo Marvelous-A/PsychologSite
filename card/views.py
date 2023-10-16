@@ -9,7 +9,7 @@ def base(request):
     features = Author.objects.last()
     aew = features.reason_request.split(';')
     return render(request, 'card/main_list.html', {'Author_features': features, 'aew': aew})
-
+######################################################
 def add_order(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
@@ -20,7 +20,7 @@ def add_order(request):
         form = OrderForm()
     
     return render(request, 'card/add_order.html',)
-
+######################################################
 def add_order_1(request):
     reception = Order.objects.last()
     features = Author.objects.last()
