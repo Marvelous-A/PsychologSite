@@ -22,11 +22,10 @@ def add_order(request):
     return render(request, 'card/add_order.html',)
 
 def add_order_1(request):
-    reception = Order.objects.last()
+    reception = Order.objects.all()
     features = Author.objects.last()
-    if request.method == 'POST':
-        form = OrderForm(request.POST)
-        
+    # if request.method == 'POST':
+    #     form = OrderForm(request.POST)
     return render(request, 'card/add_order_1.html', {'Author_features': features, 'Order_reception': reception})
 
 def add_order_2(request):

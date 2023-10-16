@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+
 a = 3
 # Create your models here.
 class Author(models.Model):
@@ -12,8 +13,6 @@ class Author(models.Model):
     amount_reception = models.IntegerField(default=0, null=True)
     auditoria = models.CharField(max_length=20, default="kfkgo", null=False)
     reason_request = models.CharField(max_length=200, default='Через ";"')
-
-    
 
     def validate_phonenumbers(self):
         import phonenumbers
@@ -38,7 +37,7 @@ class Order(models.Model):
     email = models.CharField(max_length=30, null=True)
     description = models.CharField(max_length=400, null=True)
     date = models.DateField(null=True)
-    view_lesson = models.BooleanField(default=False)
+    view_lesson = models.BooleanField(default=False)   
 
     def validate_phone_number(self):
         import phonenumbers
