@@ -19,12 +19,18 @@
         <div class='type_therapy' id='session_information'>
             <h4>Информация о сессии</h4>
             <h4 id='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
-            <div id='further_1'>
-                <a method = 'post'>Дальше</a>
-            </div>
-            <div id='warranty_1'>
-                <h4>Вы получаете гарантии Alter</h4>
-            </div>
+            <form method='post'>
+                {% csrf_token %}
+                <div>
+                <input type='checkbox' id='chossen_type' name='view_lesson'>
+                </div>
+                <div>
+                <button type='submit' id='further_1'>Дальше</button>
+                </div>
+                <div id='warranty_1'>
+                    <h4>Вы получаете гарантии Alter</h4>
+                </div>
+            </form>
         </div>
     </div>
 {% endblock %}

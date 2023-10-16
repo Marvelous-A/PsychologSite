@@ -15,24 +15,51 @@ def add_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success_page')
+            return redirect('add_order_1')
     else:
         form = OrderForm()
     
-    return render(request, 'card/add_order.html',)
+    return render(request, 'card/add_order.html', {})
 ######################################################
+
 def add_order_1(request):
-    reception = Order.objects.last()
     features = Author.objects.last()
     if request.method == 'POST':
         form = OrderForm(request.POST)
-        
-    return render(request, 'card/add_order_1.html', {'Author_features': features, 'Order_reception': reception})
+        view_lesson_value = request.POST.get('view_lesson', False)
+        if view_lesson_value == 'on':
+            form.field_order['view_lesson'] = True
+        else:
+            form.field_order['view_lesson']= False
+        request.session['order_data_form'] = form
+        return redirect('add_order_2')
+    return render(request, 'card/add_order_1.html', {'Author_features': features})
 
 def add_order_2(request):
     features = Author.objects.last()
+    form_data = request.session.get('order_data_form',{})
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.cleaned_data.update(form_data) # добавили новое зачение в поле
+            request.session['order_data_form'] = form.cleaned_data
+            return redirect('add_order_3')
+    else:
+        form = OrderForm(initial=form_data)
+
     return render(request, 'card/add_order_2.html', {'Author_features': features})
 
 def add_order_3(request):
     features = Author.objects.last()
+    form_data = request.session.get('order_data_form',{})
+
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.cleaned_data.update(form_data) # добавили новое зачение в поле
+            form.save()
+            return redirect('add_order_3')
+    else:
+        form = OrderForm(initial=form_data)
     return render(request, 'card/add_order_3.html', {'Author_features': features})

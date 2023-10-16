@@ -6,10 +6,11 @@
         <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
     </div>
     <div class='center'>
+        <form method='post'>
         <div class='type_therapy' id='personal_data'>
             <div class='personal_data_type'>
                 <h4>Номер телефона<h4>
-                <input class='data'>
+                <input class='data' value="{{form.values.phone}}">
             </div>
             <div class='personal_data_type'>
                 <h4>Почта<h4>
@@ -20,6 +21,7 @@
                 <input class='data'>
             </div>
         </div>
+        </form>
         <div class='type_therapy' id='session_information_2'>
             <h4>Информация о сессии</h4>
             <h4 id='Cost_h4_2'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
