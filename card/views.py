@@ -22,16 +22,42 @@ def add_order(request):
     return render(request, 'card/add_order.html',)
 ######################################################
 def add_order_1(request):
-    reception = Order.objects.all()
     features = Author.objects.last()
-    # if request.method == 'POST':
-    #     form = OrderForm(request.POST)
-    return render(request, 'card/add_order_1.html', {'Author_features': features, 'Order_reception': reception})
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        view_lesson_value = request.POST.get('view_lesson', False)
+        if view_lesson_value == 'on':
+            form.field_order['view_lesson'] = True
+        else:
+            form.field_order['view_lesson']= False
+        request.session['order_data_form'] = form
+        return redirect('add_order_2')
+    return render(request, 'card/add_order_1.html', {'Author_features': features})
 
 def add_order_2(request):
     features = Author.objects.last()
+    form_data = request.session.get('order_data_form',{})
+    
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.cleaned_data.update(form_data)
+            form.save()
+            return redirect('add_order_2')
+    else:
+        form = OrderForm(initial=form_data)
     return render(request, 'card/add_order_2.html', {'Author_features': features})
 
 def add_order_3(request):
     features = Author.objects.last()
-    return render(request, 'card/add_order_3.html', {'Author_features': features})
+    
+    if request.method == 'POST':
+        print(1)
+        form = OrderForm(request.POST)
+        #if form.is_valid():
+        print(2)
+        form.save()
+        return redirect('add_order_2')
+    else:
+        form = OrderForm()
+    return render(request, 'card/add_order_3.html', {'Author_features': features, 'form': form})

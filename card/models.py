@@ -35,9 +35,10 @@ class Author(models.Model):
 class Order(models.Model):
     phone = models.CharField(max_length=20, default='79999999999', null=True)
     email = models.CharField(max_length=30, null=True)
+    name_client = models.CharField(max_length=90, null=True)
     description = models.CharField(max_length=400, null=True)
-    date = models.DateField(null=True)
-    view_lesson = models.BooleanField(default=False)   
+    date = models.CharField(max_length=40, null=True)#DateField(null=True)
+    view_lesson = models.BooleanField(default=True)
 
     def validate_phone_number(self):
         import phonenumbers
@@ -54,7 +55,7 @@ class Order(models.Model):
         pass
 
     def save(self, *args, **kwargs):
-        self.validate_phone_number()
+        #self.validate_phone_number()
         super().save(*args, **kwargs)
 
     def __str__(self):

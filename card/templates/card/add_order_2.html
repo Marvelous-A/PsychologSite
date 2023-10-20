@@ -38,11 +38,18 @@
         </div>
         <div class='type_therapy' id='session_information_2'>
             <h4>Информация о сессии</h4>
-            <p></p>
+            <form method="post"> <!-- Проверка value -->
+                {% csrf_token %}
+                <input id="calendar_input" value="{{form.data}}">
+            </form>
+            <p>{{form.data.value}}</p>
             <h4 id='Cost_h4_2'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
             <div id='further_2'>
                 <a href = "{% url 'add_order_3' %}">Дальше</a>
             </div>
+            <button id='further_2' type='submit'> 
+                <p>Сохранить</p> 
+            </button> 
             <div id='warranty_2'>
                 <h4>Вы получаете гарантии Alter</h4>
             </div>
