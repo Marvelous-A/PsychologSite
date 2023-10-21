@@ -1,7 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-a = 3
 # Create your models here.
 class Author(models.Model):
     author_title = models.CharField(max_length=256, default='Фамилия имя')
@@ -36,8 +35,8 @@ class Order(models.Model):
     phone = models.CharField(max_length=20, default='79999999999', null=True)
     email = models.CharField(max_length=30, null=True)
     name_client = models.CharField(max_length=90, null=True)
-    description = models.CharField(max_length=400, null=True)
-    date = models.CharField(max_length=40, null=True)#DateField(null=True)
+    description = models.CharField(max_length=400,default='1', null=True)
+    date = models.CharField(max_length=40,default='2', null=True)#DateField(null=True)
     view_lesson = models.BooleanField(default=True)
 
     def validate_phone_number(self):

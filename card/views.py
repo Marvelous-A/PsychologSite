@@ -54,9 +54,10 @@ def add_order_3(request):
     if request.method == 'POST':
         print(1)
         form = OrderForm(request.POST)
-        #if form.is_valid():
-        print(2)
-        form.save()
+        print(form.errors.as_data())
+        if form.is_valid():
+            print(2)
+            form.save()
         return redirect('add_order_2')
     else:
         form = OrderForm()
