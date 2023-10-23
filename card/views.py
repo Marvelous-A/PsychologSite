@@ -34,7 +34,7 @@ def add_order_1(request):
         return redirect('add_order_2')
     return render(request, 'card/add_order_1.html', {'Author_features': features})
 
-def add_order_2(request):
+def add_order_2(request, form):
     features = Author.objects.last()
     form_data = request.session.get('order_data_form',{})
     
@@ -48,15 +48,13 @@ def add_order_2(request):
         form = OrderForm(initial=form_data)
     return render(request, 'card/add_order_2.html', {'Author_features': features})
 
-def add_order_3(request):
+def add_order_3(request, form):
     features = Author.objects.last()
     
     if request.method == 'POST':
-        print(1)
         form = OrderForm(request.POST)
         print(form.errors.as_data())
         if form.is_valid():
-            print(2)
             form.save()
         return redirect('add_order_2')
     else:
