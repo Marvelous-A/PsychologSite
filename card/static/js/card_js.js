@@ -4,8 +4,10 @@ var viewLessonInput = document.getElementById('chossen_type')
 
 document.querySelector('#admin').onclick = function(){
     window.location.replace('http://127.0.0.1:8000/admin/')
-    console.log('hello')
 }
+// document.querySelector('#customers').onclick = function(){
+//     window.location.replace('http://127.0.0.1:8000/customer/')
+// }
 
 typeIndividual.addEventListener('click', function(){
     typeFamily.classList.remove('check_type_therapy')

@@ -8,14 +8,15 @@ header {
     color: #29b981;
 }
 
-#admin {
-    width: 100px;
+.button_header {
+    width: 120px;
+    font-size: 20px;
     /*border: solid 2px #29b981;*/
     background-color: #29b981;
     border-radius: 8px;
     position: relative;
-    left: 1350px;
-    bottom: 60px;
+    left: 1330px;
+    bottom: 65px;
     color: #fff;
 }
 
@@ -115,7 +116,8 @@ body {
 .PriceButton {
     height: 50px;
     width: 240px;
-    margin: 20px;
+    margin-top: 18px;
+    margin-left: 18px ;
     border-radius: 8px;
     text-align: center;
     padding: 13px;
@@ -129,7 +131,7 @@ body {
     background-color: #29b981;
 }
 
-#ViewTime a {
+#ViewTime p {
     color: #fff
 }
 
@@ -176,37 +178,37 @@ body {
     border: solid 4px #29b981;
 } 
 
-#session_information {
-    height: 180px;
+.session_information {
+    height: 320px;
     box-shadow: 1px 1px 20px #d8d8d8;
     border-radius: 8px;
 }
 
-#further_1 {
+.further {
     width: 200px;
     text-align: center;
     background-color: #29b981;
     border-radius: 8px;
-    padding: 10px;
+    padding-top: 10px;
     position: relative;
     left: 15%;
-    top: 28%;
+    top: 185px;
 }
 
-#further_1 a {
+.further p {
     color: #fff;
 }
 
-#Cost_h4 {
+.Cost_h4 {
     border-top: solid 1px #dcdcdc;
     padding-top: 10px;
     padding-left: 10px;
     position: relative;
-    top: 20%;
+    top: 180px;
 }
 
-#warranty_1 {
-    width: 300px;
+.warranty {
+    width: 320px;
     background-color: #e6f5ee;
     text-align: center;
     border-radius: 8px;
@@ -214,11 +216,12 @@ body {
     padding-bottom: 2px;
     position: relative;
     right: 10px;
-    top: 40%;
+    /*top: 40%;*/
+    margin-top: 205px;
 }
 
 #session_information_2 {
-    height: 220px;
+    height: 250px;
     box-shadow: 1px 1px 20px #d8d8d8;
     border-radius: 8px;
 }
@@ -236,10 +239,14 @@ body {
     text-align: center;
     background-color: #29b981;
     border-radius: 8px;
-    padding: 10px;
+    padding-top: 8px;
     position: relative;
     left: 15%;
     top: 40%;
+}
+
+#further_2 p{
+    color: #fff;
 }
 
 #warranty_2 {
@@ -321,6 +328,14 @@ body {
 
 .center {
     margin: 0 auto;
+}
+
+#user {
+    width: 550px;
+    background-color: #29b981;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
 }
 
 #futor {

@@ -1,0 +1,9 @@
+{% extends "card/base.html" %}
+
+{% block content %}
+    {% for user in users %}
+        <div id='user'> 
+            <p>{{user.phone}}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

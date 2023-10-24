@@ -9,18 +9,12 @@ def base(request):
     features = Author.objects.last()
     aew = features.reason_request.split(';')
     return render(request, 'card/main_list.html', {'Author_features': features, 'aew': aew})
-######################################################
-def add_order(request):
+
+def main_list(request):
     if request.method == 'POST':
-        form = OrderForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('success_page')
-    else:
-        form = OrderForm()
-    
-    return render(request, 'card/add_order.html',)
-######################################################
+        return redirect('add_order_1')
+    return render(request, 'card/main_list.html', {})
+
 def add_order_1(request):
     features = Author.objects.last()
     if request.method == 'POST':
@@ -54,3 +48,7 @@ def add_order_3(request):
     else:
         form = OrderForm()
     return render(request, 'card/add_order_3.html', {'Author_features': features, 'form': form})
+
+def customers(request):
+    users = Order.objects.all()
+    return render(request, 'card/customers.html', {'users': users})

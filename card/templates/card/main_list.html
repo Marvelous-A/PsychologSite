@@ -1,43 +1,42 @@
 {% extends "card/base.html" %}
 
 {% block content %}
-<div id='Specifications1'>
-    <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
-    <h1 id='name'> {{Author_features.author_title}} </h1>
-    <p>Клинический психолог Семейный психолог <br> Психолог</p>
-    <div id='Specifications2'>
-        <p id='Specifications2p'>{{Author_features.profession}} лет опыта &nbsp;&nbsp;&nbsp; {{Author_features.age}} лет &nbsp;&nbsp;&nbsp;</p>
-        <p id='Verified'>Проверено Alter</p>
-    </div>
-    <div id='NumberSessions'>
-        <p>Болee 200 сессий в Alter</p>
-    </div>
-</div>
-
-<div id='WhenApply'>
-    <div id='WhenApplytext'>
-        <h3>Когда обращаются</h3>
-        <div>
-            {% for obj in aew %}
-                <li class='lileft'>{{obj}}</li>
-            {% endfor %}
+    <div id='Specifications1'>
+        <img class='foto' src="https://back.alter.ru/media/avatars/7909800b2dafb7ef987cbbcec359c13ce3b21b69.jpeg" alt='фото'\>
+        <h1 id='name'> {{Author_features.author_title}} </h1>
+        <p>Клинический психолог Семейный психолог <br> Психолог</p>
+        <div id='Specifications2'>
+            <p id='Specifications2p'>{{Author_features.profession}} лет опыта &nbsp;&nbsp;&nbsp; {{Author_features.age}} лет &nbsp;&nbsp;&nbsp;</p>
+            <p id='Verified'>Проверено Alter</p>
         </div>
-        <div id='audit'>
-            <h3>Аудитория</h3>
-            <div id='age'>{{Author_features.auditoria}}</div>
+        <div id='NumberSessions'>
+            <p>Болee 200 сессий в Alter</p>
         </div>
     </div>
-</div>
-
-<div id='discription'>
-    <h3>О себе</h3>
-    <p>{{Author_features.discription}}</p>
-</div>
-
-<div id='price'>
-    <h3>{{Author_features.amount_reception}} ₽</h3>
-    <h5>Принимает онлайн</h5>
-    <div id='ViewTime' class="PriceButton"><a href = "{% url 'add_order_1' %}">Посмотреть время</a></div>
-    <div id='PsychologistQuestion' class="PriceButton">Задать вопрос психологу</div>
-</div>
+    <div id='WhenApply'>
+        <div id='WhenApplytext'>
+            <h3>Когда обращаются</h3>
+            <div>
+                {% for obj in aew %}
+                    <li class='lileft'>{{obj}}</li>
+                {% endfor %}
+            </div>
+            <div id='audit'>
+                <h3>Аудитория</h3>
+                <div id='age'>{{Author_features.auditoria}}</div>
+            </div>
+        </div>
+    </div>
+    <div id='discription'>
+        <h3>О себе</h3>
+        <p>{{Author_features.discription}}</p>
+    </div>
+    <div id='price'>
+        <h3>{{Author_features.amount_reception}} ₽</h3>
+        <h5>Принимает онлайн</h5>
+        <button id='ViewTime' class="PriceButton" type='submit'>
+            <p>Посмотреть время</p>
+        </button>
+        <div id='PsychologistQuestion' class="PriceButton">Задать вопрос психологу</div>
+    </div>
 {% endblock %}
