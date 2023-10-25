@@ -38,8 +38,8 @@ def add_order_1(request):
 
         # print(form['view_lesson'].value())
         if form.is_valid(): #если форма valid то появляется cleaned_data
-            form_data = form
-            return redirect('add_order_2', form_data)
+            form_data = form.cleaned_data
+            return redirect("add_order_2", form_data)
         else:
             print(form.errors)
     else:
@@ -48,11 +48,10 @@ def add_order_1(request):
 
 def add_order_2(request, form):
     features = Author.objects.last()
-    if request.method == 'POST':
-        form = form
-        form.cleaned_data = request.POST.get('date')
-        return redirect('add_order_3', form)
-    return render(request, 'card/add_order_2.html', {'Author_features': features, 'form': form})
+    # if request.method == 'POST':
+    #     form.cleaned_data = request.POST.get('date')
+    #     return redirect('add_order_3', form)
+    return render(request, 'card/add_order_2.html', {'Author_features': features})
 
 def add_order_3(request):
     features = Author.objects.last()

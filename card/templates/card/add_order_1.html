@@ -30,9 +30,5 @@
                 <h4>Вы получаете гарантии Alter</h4>
             </div>
         </div>
-        <form method="post"> <!-- Проверка value -->
-            {% csrf_token %} 
-            <input type="checkbox" id='chossen_type' checked=true value="{{form.view_lesson.value}}" name="{{form.view_lesson.name}}"> 
-        </form> <!-- Проверка value -->
     </div>
 {% endblock %}
