@@ -9,6 +9,10 @@ document.querySelector('#admin').onclick = function(){
 //     window.location.replace('http://127.0.0.1:8000/customer/')
 // }
 
+// document.getElementById("#customers").addEventListener("click", function(){
+//     window.location.href = 'http://127.0.0.1:8000/customers/';
+// });
+
 typeIndividual.addEventListener('click', function(){
     typeFamily.classList.remove('check_type_therapy')
     typeIndividual.classList.add('check_type_therapy')

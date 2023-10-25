@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Author
 from .models import Order
 from .forms import OrderForm
@@ -6,14 +6,16 @@ from .forms import OrderForm
 # Create your views here.
 
 def base(request):
-    features = Author.objects.last()
-    aew = features.reason_request.split(';')
-    return render(request, 'card/main_list.html', {'Author_features': features, 'aew': aew})
+    # features = Author.objects.last()
+    # aew = features.reason_request.split(';')
+    return render(request, 'card/main_list.html', {})
 
 def main_list(request):
+    features = Author.objects.last()
+    aew = features.reason_request.split(';')
     if request.method == 'POST':
         return redirect('add_order_1')
-    return render(request, 'card/main_list.html', {})
+    return render(request, 'card/main_list.html', {'Author_features': features, 'aew': aew})
 
 def add_order_1(request):
     features = Author.objects.last()
@@ -52,3 +54,7 @@ def add_order_3(request):
 def customers(request):
     users = Order.objects.all()
     return render(request, 'card/customers.html', {'users': users})
+def customers_detal(request, pk):
+    users = get_object_or_404(Order, pk=pk)
+    #users = Order.objects.all()
+    return render(request, 'card/customers_detal.html', {'users': users})

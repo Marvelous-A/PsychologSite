@@ -34,9 +34,12 @@
     <div id='price'>
         <h3>{{Author_features.amount_reception}} ₽</h3>
         <h5>Принимает онлайн</h5>
-        <button id='ViewTime' class="PriceButton" type='submit'>
-            <p>Посмотреть время</p>
-        </button>
+        <form method='post'>
+            {% csrf_token %}
+            <button id='ViewTime' class="PriceButton" type='submit'>
+                <p>Посмотреть время</p>
+            </button>
+        </form>
         <div id='PsychologistQuestion' class="PriceButton">Задать вопрос психологу</div>
     </div>
 {% endblock %}
