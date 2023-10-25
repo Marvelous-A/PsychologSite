@@ -20,21 +20,39 @@ def main_list(request):
 def add_order_1(request):
     features = Author.objects.last()
     if request.method == 'POST':
-        form = OrderForm(request.POST)
-        view_lesson_value = request.POST.get('view_lesson', False)
+        view_lesson_value = request.POST.get('view_lesson')# Вот тут мне нужно узнать значене checked на странице ?
+        request.POST = request.POST.copy() # <== дубликат метода отправки
+        # print(view_lesson_value)
+        # заполнение формы в зависимости от значение которое мы получили в 
         if view_lesson_value == 'on':
-            form.field_order['view_lesson'] = True
+            request.POST['view_lesson'] = True
         else:
-            form.field_order['view_lesson']= False
-        return redirect('add_order_2', form)
-    return render(request, 'card/add_order_1.html', {'Author_features': features})
+            request.POST['view_lesson'] = False
 
-def add_order_2(request):
+        request.POST['description'] = '0'
+        request.POST['phone'] = '0'
+        request.POST['email'] = '0@mail.ru'
+        request.POST['date'] = '0'
+        request.POST['name_client'] = '0'
+        form = OrderForm(request.POST)
+
+        # print(form['view_lesson'].value())
+        if form.is_valid(): #если форма valid то появляется cleaned_data
+            form_data = form
+            return redirect('add_order_2', form_data)
+        else:
+            print(form.errors)
+    else:
+        form = OrderForm()
+    return render(request, 'card/add_order_1.html', {'Author_features': features, 'form':form})
+
+def add_order_2(request, form):
     features = Author.objects.last()
     if request.method == 'POST':
-        form = OrderForm(request.POST)
+        form = form
+        form.cleaned_data = request.POST.get('date')
         return redirect('add_order_3', form)
-    return render(request, 'card/add_order_2.html', {'Author_features': features})
+    return render(request, 'card/add_order_2.html', {'Author_features': features, 'form': form})
 
 def add_order_3(request):
     features = Author.objects.last()

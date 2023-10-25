@@ -18,12 +18,15 @@
         </div>
         <div class='type_therapy' class='session_information'>
             <h4>Информация о сессии</h4>
-            <p>{{form.view_lesson.value}}</p>
-            <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
-            <button class='further' type='submit'> 
-                <p>Далее</p> 
-            </button> 
-            <div class='warranty'>
+            <form method="post"> <!-- Проверка value -->
+                {% csrf_token %}
+                <input type="checkbox" id='chossen_type' checked=true name="view_lesson"> 
+                <h4 id='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+                <button id='further_2' type='submit'> 
+                    <p>Сохранить</p> 
+                </button> 
+            </form> <!-- Проверка value -->
+            <div id='warranty_1'>
                 <h4>Вы получаете гарантии Alter</h4>
             </div>
         </div>
