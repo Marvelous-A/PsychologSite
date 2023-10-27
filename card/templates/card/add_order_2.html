@@ -41,12 +41,12 @@
             <form method="post"> <!-- Проверка value -->
                 {% csrf_token %}
                 <input id="calendar_input" value="{{form.data}}">
-                {% comment %} <p>{{form.data.value}}</p>  {% endcomment %}
-                <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
-                <button class='further' type='submit'> 
-                    <p>Далее</p> 
-                </button> 
-            </form>
+            </form> {% endcomment %}
+            {% comment %} <p>{{form.data.value}}</p> {% endcomment %}
+            <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+            <button class='further' type='submit'> 
+                <p>Далее</p> 
+            </button> 
             <div class='warranty'>
                 <h4>Вы получаете гарантии Alter</h4>
             </div>

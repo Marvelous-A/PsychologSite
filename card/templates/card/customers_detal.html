@@ -1,10 +1,17 @@
 {% extends "card/base.html" %}
 
 {% block content %}
+<<<<<<< HEAD
     <div id='user'>
         <h2 id='name_client'>{{users.name_client}}</h2>
         <h3>Номер телефона: {{users.phone}}</h3>
         <h3>Занятие назначено на {{users.date}} октября</h3>
         <p>{{users.description}}</p>
+=======
+    <div id='user'> 
+        <h2>{{users.name_client}}</h2>
+        <p>Номер телефона: {{users.phone}}</p>
+        <p>Занятие назначено на {{users.date}} октября</p>
+>>>>>>> 4d2bf9c5de9be26d7ac382c89e04e79b3072abed
     </div>
 {% endblock %}

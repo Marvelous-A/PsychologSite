@@ -20,7 +20,7 @@
             <h4>Информация о сессии</h4>
             <form method="post"> <!-- Проверка value -->
                 {% csrf_token %}
-                <input type="checkbox" id='chossen_type' checked=true name="view_lesson"> 
+                <input type="checkbox" hidden id='chossen_type' checked=true name="view_lesson"> 
                 <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
                 <button class='further' type='submit'> 
                     <p>Сохранить</p>
