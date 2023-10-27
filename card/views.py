@@ -21,57 +21,40 @@ def add_order_1(request):
     features = Author.objects.last()
     if request.method == 'POST':
         view_lesson_value = request.POST.get('view_lesson')# Вот тут мне нужно узнать значене checked на странице ?
-        request.POST = request.POST.copy() # <== дубликат метода отправки
-        # print(view_lesson_value)
-        # заполнение формы в зависимости от значение которое мы получили в 
-        if view_lesson_value == 'on':
-            request.POST['view_lesson'] = True
-        else:
-            request.POST['view_lesson'] = False
+        request.session['view_lesson'] = True if view_lesson_value == 'on' else False  # В этом месте передается параметр в общий запрос(сессию)
+        return redirect("add_order_2")
+    return render(request, 'card/add_order_1.html', {'Author_features': features})
 
-        request.POST['description'] = '0'
-        request.POST['phone'] = '0'
-        request.POST['email'] = '0@mail.ru'
-        request.POST['date'] = '0'
-        request.POST['name_client'] = '0'
-        form = OrderForm(request.POST)
-
-        # print(form['view_lesson'].value())
-        if form.is_valid(): #если форма valid то появляется cleaned_data
-            form_data = form.cleaned_data
-            return redirect("add_order_2", form_data)
-        else:
-            print(form.errors)
-    else:
-        form = OrderForm()
-    return render(request, 'card/add_order_1.html', {'Author_features': features, 'form':form})
-
-def add_order_2(request, form):
+def add_order_2(request):
     features = Author.objects.last()
-    # if request.method == 'POST':
-    #     form.cleaned_data = request.POST.get('date')
-    #     return redirect('add_order_3', form)
+    if request.method == 'POST':
+        date_value = request.POST.get('date')
+        request.session['date'] = date_value
+        return redirect('add_order_3')
     return render(request, 'card/add_order_2.html', {'Author_features': features})
 
 def add_order_3(request):
     features = Author.objects.last()
-    
+    print()
     if request.method == 'POST':
-        form = OrderForm(request.POST)
-        print(form.errors.as_data())
+        request.POST = request.POST.copy() # делаем POST изменяемым чтобы добавить последние 2 недобавленных параметра 
+        request.POST['date'] = request.session.get('date') # <= добавили в основной POST запрос, поля которые тянутся с прошлых этапо
+        request.POST['view_lesson'] = request.session.get('view_lesson') # <= добавили в основной POST запрос, поля которые тянутся с прошлых этапо
+        form = OrderForm(request.POST)# <= передали конечный запрос вместе с теми полями который заполняли в прошлых 2 шагах
         if form.is_valid():
             form.save()
         else:
-            form = OrderForm(request.POST)
-        return redirect('add_order_2')
+            print(form.errors.as_data())
+        return redirect('main_list')
     else:
         form = OrderForm()
-    return render(request, 'card/add_order_3.html', {'Author_features': features, 'form': form})
+    return render(request, 'card/add_order_3.html', {'Author_features': features, 'form':form})
 
 def customers(request):
     users = Order.objects.all()
     return render(request, 'card/customers.html', {'users': users})
+
 def customers_detal(request, pk):
     users = get_object_or_404(Order, pk=pk)
-    #users = Order.objects.all()
+    # users = Order.objects.get(pk=pk)
     return render(request, 'card/customers_detal.html', {'users': users})

@@ -1,9 +1,10 @@
 {% extends "card/base.html" %}
 
 {% block content %}
-    <div id='user'> 
-        <h2>{{user.name_client}}</h2>
-        <p>Номер телефона: {{user.phone}}</p>
-        <p>Занятие назначено на {{user.date}} октября</p>
+    <div id='user'>
+        <h2 id='name_client'>{{users.name_client}}</h2>
+        <h3>Номер телефона: {{users.phone}}</h3>
+        <h3>Занятие назначено на {{users.date}} октября</h3>
+        <p>{{users.description}}</p>
     </div>
 {% endblock %}

@@ -307,7 +307,7 @@ body {
     margin: 0 auto;
 }
 
-#user {
+#users {
     width: 550px;
     background-color: #29b981;
     margin: 10px;
@@ -318,9 +318,26 @@ body {
     color: #fff;
 }
 
-#user a {
+#users a {
     color:#fff;
     text-decoration: none;
+}
+
+#user {
+    width: 90%;
+    background-color: #29b981;
+    margin: 10px;
+    padding-left: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 8px;
+    color: #fff;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#name_client {
+    text-align: center;
 }
 
 #futor {
