@@ -4,7 +4,7 @@
     {% for user in users %}
         <div id='user'> 
             <h2><a href = "{% url 'customers_detal' pk=user.pk %}">{{user.name_client}}</a></h2>
-            <p>Номер телефона: {{user.phone}}</p>
+            <p>Номер телефона: {{ user.phone }}</p>
             <p>Занятие назначено на {{user.date}} октября</p>
         </div>
     {% endfor %}
