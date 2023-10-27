@@ -14,8 +14,12 @@
 <body>
     <header>
         <p>alter</p>
-        <div class='button_header' id='admin'><p>admin</p></div>
-        <div class='button_header' id='customers'><p>customers</p></div>
+        <div id="button_header">
+            <a id='admin'>admin</a>
+            <br>
+            {% comment %} <div class='button_header' ><a href="{% url 'customers' %}">customers</a></div> {% endcomment %}
+            <a id='customers' href="{% url 'customers' %}">customers</a>
+        </div>
     </header>
 
     {% block content %}

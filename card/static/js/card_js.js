@@ -5,9 +5,10 @@ var viewLessonInput = document.getElementById('chossen_type')
 document.querySelector('#admin').onclick = function(){
     window.location.replace('http://127.0.0.1:8000/admin/')
 }
-// document.querySelector('#customers').onclick = function(){
-//     window.location.replace('http://127.0.0.1:8000/customer/')
-// }
+
+document.querySelector('#customers').onclick = function(){
+    window.location.replace('http://127.0.0.1:8000/customers.html/')
+}
 
 // document.getElementById("#customers").addEventListener("click", function(){
 //     window.location.href = 'http://127.0.0.1:8000/customers/';

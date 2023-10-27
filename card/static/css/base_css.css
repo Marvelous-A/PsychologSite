@@ -8,21 +8,43 @@ header {
     color: #29b981;
 }
 
-.button_header {
-    width: 120px;
-    font-size: 20px;
-    /*border: solid 2px #29b981;*/
-    background-color: #29b981;
-    border-radius: 8px;
-    position: relative;
-    left: 1330px;
-    bottom: 65px;
-    color: #fff;
-}
-
 body {
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
+}
+
+#button_header{
+    /*background-color: #848691;*/
+    float: left;
+    position: relative;
+    left: 1335px;
+    bottom: 65px;
+}
+
+#admin {
+    font-size: 20px;
+    background-color: #29b981;
+    border-radius: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#customers {
+    font-size: 20px;
+    background-color: #29b981;
+    border-radius: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #fff;
+    position: relative;
+    top: 10px;
+    text-decoration: none;
 }
 
 #Specifications1 {
@@ -220,51 +242,6 @@ body {
     margin-top: 205px;
 }
 
-#session_information_2 {
-    height: 250px;
-    box-shadow: 1px 1px 20px #d8d8d8;
-    border-radius: 8px;
-}
-
-#Cost_h4_2 {
-    border-top: solid 1px #dcdcdc;
-    padding-top: 10px;
-    padding-left: 10px;
-    position: relative;
-    top: 35%;
-}
-
-#further_2 {
-    width: 200px;
-    text-align: center;
-    background-color: #29b981;
-    border-radius: 8px;
-    padding-top: 8px;
-    position: relative;
-    left: 15%;
-    top: 40%;
-}
-
-#further_2 p{
-    color: #fff;
-}
-
-#warranty_2 {
-    width: 300px;
-    background-color: #e6f5ee;
-    text-align: center;
-    border-radius: 8px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    position: relative;
-    right: 10px;
-    top: 50%;
-}
-
-#further_2 a {
-    color: #fff;
-}
-
 #calendar {
     height: 500px;
     width: 665px;
@@ -339,6 +316,11 @@ body {
     padding-bottom: 1px;
     border-radius: 8px;
     color: #fff;
+}
+
+#user a {
+    color:#fff;
+    text-decoration: none;
 }
 
 #futor {
