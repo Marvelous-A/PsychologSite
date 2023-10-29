@@ -8,6 +8,11 @@
     <div class='center'>
         <div class='type_therapy' id='calendar'>
             <h3>Выберите время</h3>
+            <div id="date_picker_choice">
+                <button id="button_date_left">l</button>
+                <h3 id="date_picker"></h3>
+                <button id="button_date_right">r</button>
+            </div>
             <div class='weeks'>
                 <div class="week_day">пн</div>
                 <div class="week_day">вт</div>
@@ -18,35 +23,36 @@
                 <div class="week_day">вс</div>
             </div>
             <div class='weeks'>
-                <div id='mo1' class="week_day_num">16</div>
-                <div id='tu1' class="week_day_num">17</div>
-                <div id='we1' class="week_day_num">18</div>
-                <div id='th1' class="week_day_num">19</div>
-                <div id='fr1' class="week_day_num">20</div>
-                <div id='sa1' class="week_day_num">21</div>
-                <div id='su1' class="week_day_num">22</div>
+                <div id='0' class="week_day_num"></div>
+                <div id='1' class="week_day_num"></div>
+                <div id='2' class="week_day_num"></div>
+                <div id='3' class="week_day_num"></div>
+                <div id='4' class="week_day_num"></div>
+                <div id='5' class="week_day_num"></div>
+                <div id='6' class="week_day_num"></div>
             </div>
             <div class='weeks'>
-                <div id='mo2' class="week_day_num">23</div>
-                <div id='tu2' class="week_day_num">24</div>
-                <div id='we2' class="week_day_num">25</div>
-                <div id='th2' class="week_day_num">26</div>
-                <div id='fr2' class="week_day_num">27</div>
-                <div id='sa2' class="week_day_num">28</div>
-                <div id='su2' class="week_day_num">29</div>
+                <div id='7' class="week_day_num"></div>
+                <div id='8' class="week_day_num"></div>
+                <div id='9' class="week_day_num"></div>
+                <div id='10' class="week_day_num"></div>
+                <div id='11' class="week_day_num"></div>
+                <div id='12' class="week_day_num"></div>
+                <div id='13' class="week_day_num"></div>
             </div>
         </div>
         <div class='type_therapy' class='session_information'>
             <h4>Информация о сессии</h4>
             <form method="post"> <!-- Проверка value -->
                 {% csrf_token %}
-                <input id="calendar_input" value="{{form.data}}">
-            </form> {% endcomment %}
-            {% comment %} <p>{{form.data.value}}</p> {% endcomment %}
-            <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
-            <button class='further' type='submit'> 
-                <p>Далее</p> 
-            </button> 
+                <input id="calendar_input"  value="" name="date">
+                {% comment %} hidden {% endcomment %}
+                {% comment %} <p>{{form.data.value}}</p> {% endcomment %}
+                <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
+                <button class='further' type='submit'> 
+                    <p>Далее</p> 
+                </button> 
+            </form>
             <div class='warranty'>
                 <h4>Вы получаете гарантии Alter</h4>
             </div>

@@ -340,6 +340,30 @@ body {
     text-align: center;
 }
 
+#date_picker_choice {
+    text-align: center;
+    position: relative;
+    top: 25px
+}
+
+#button_date_left {
+    display: inline-block;
+    margin-right: 60px;
+    background: none;
+    border: none;
+}
+
+#button_date_right {
+    display: inline-block;
+    margin-left: 60px;
+    background: none;
+    border: none;
+}
+
+#date_picker {
+    display: inline-block;
+}
+
 #futor {
     height: 150px;
     margin-bottom: 0;

@@ -1,7 +1,54 @@
-const data = [document.getElementById('mo1'), document.getElementById('tu1'), document.getElementById('we1'), document.getElementById('th1'),
-document.getElementById('fr1'), document.getElementById('sa1'), document.getElementById('su1'), document.getElementById('mo2'),
-document.getElementById('tu2'), document.getElementById('we2'), document.getElementById('th2'), document.getElementById('fr2'),
-document.getElementById('sa2'), document.getElementById('su2')]
+const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+const days = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+const year = 2023
+let month = 'Октябрь'
+let day = 29
+let arr = []
+
+if ((year % 4 == 0) && (year % 100 != 0)){
+    days[1] = 29
+} else{ 
+    days[1] = 28
+}
+
+let countDay = 0;
+let firstMonth = ''
+let lastMonth = ''
+let lastDay = 0
+for (let i = 0; i < 12; i++){
+    if (months[i] == month){
+        firstMonth = i
+        for (let j = day; j < days[i]+1; j++){
+            if (countDay < 14){
+                arr.push(j)
+                //console.log(j)
+                countDay++
+            }
+        }
+        for (let j = 1; j < days[i+1]+1; j++){
+            if (countDay != 14){
+                lastMonth = firstMonth+1
+                arr.push(j)
+                //console.log(j)
+                lastDay = j
+                countDay++
+            }
+        }
+    }
+}
+let datePicker = `${day} ${months[firstMonth]} - ${lastDay} ${months[lastMonth]}`
+document.getElementById('date_picker').textContent = datePicker
+console.log(datePicker)
+for (let i = 0; i < 14; i++){
+    console.log(arr[i])
+    document.getElementById(String(i)).textContent = arr[i]
+}
+
+
+const data = [document.getElementById('0'), document.getElementById('1'), document.getElementById('2'), document.getElementById('3'),
+document.getElementById('4'), document.getElementById('5'), document.getElementById('6'), document.getElementById('7'),
+document.getElementById('8'), document.getElementById('9'), document.getElementById('10'), document.getElementById('11'),
+document.getElementById('12'), document.getElementById('13')]
 let dataCon = 0
 var calendarInput = document.getElementById("calendar_input")
 
