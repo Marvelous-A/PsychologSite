@@ -1,8 +1,8 @@
 const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 const days = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 const year = 2023
-let month = 'Октябрь'
-let day = 29
+let month = 'Май'
+let day = 15
 let arr = []
 
 if ((year % 4 == 0) && (year % 100 != 0)){
@@ -18,14 +18,16 @@ let lastDay = 0
 for (let i = 0; i < 12; i++){
     if (months[i] == month){
         firstMonth = i
-        for (let j = day; j < days[i]+1; j++){
+        for (let j = day; j < days[firstMonth]+1; j++){
             if (countDay < 14){
                 arr.push(j)
                 //console.log(j)
                 countDay++
+                lastMonth = firstMonth
+                lastDay = j
             }
         }
-        for (let j = 1; j < days[i+1]+1; j++){
+        for (let j = 1; j < days[firstMonth+1]+1; j++){
             if (countDay != 14){
                 lastMonth = firstMonth+1
                 arr.push(j)
