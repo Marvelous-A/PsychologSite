@@ -1,9 +1,19 @@
 const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-const days = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-const year = 2023
-let month = 'Май'
-let day = 15
+const week =[['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'], ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'], ['ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС', 'ПН'],
+            ['СР', 'ЧТ', 'ПТ', 'СБ', 'ВС', 'ПН', 'ВТ'], ['ЧТ', 'ПТ', 'СБ', 'ВС', 'ПН', 'ВТ', 'СР'],
+            ['ПТ', 'СБ', 'ВС', 'ПН', 'ВТ', 'СР', 'ЧТ'], ['СБ', 'ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ']]
+let days = [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+currentDate = new Date()
+let day = currentDate.getDate()
+const year = currentDate.getFullYear()
+let month = currentDate.getMonth()
+let weekArr = week[currentDate.getDay()]
+for (let i = 0; i < 7; i++){
+    document.getElementById(String(i+20)).textContent = weekArr[i]
+}
+console.log(weekArr)
 let arr = []
+let countclick = 0
 
 if ((year % 4 == 0) && (year % 100 != 0)){
     days[1] = 29
@@ -11,41 +21,49 @@ if ((year % 4 == 0) && (year % 100 != 0)){
     days[1] = 28
 }
 
-let countDay = 0;
-let firstMonth = ''
-let lastMonth = ''
-let lastDay = 0
-for (let i = 0; i < 12; i++){
-    if (months[i] == month){
-        firstMonth = i
-        for (let j = day; j < days[firstMonth]+1; j++){
-            if (countDay < 14){
-                arr.push(j)
-                //console.log(j)
-                countDay++
-                lastMonth = firstMonth
-                lastDay = j
-            }
+monthGet(day, month)
+
+function monthGet(day, month){
+    let countDays = 0;
+    for (let i = day; i <= 14; i++){
+        arr.push(i)
+        countDays++
+    }
+    if (countDays < 14){
+        month++
+        for (let i = 1; i <= (14 - countDays); i++){
+            arr.push(i)
         }
-        for (let j = 1; j < days[firstMonth+1]+1; j++){
-            if (countDay != 14){
-                lastMonth = firstMonth+1
-                arr.push(j)
-                //console.log(j)
-                lastDay = j
-                countDay++
-            }
+        let datePicker = `${arr[0]} ${months[month-1]} - ${arr[arr.length - 1]} ${months[month]}`
+        document.getElementById('date_picker').textContent = datePicker
+        for (let i = 0; i < 14; i++){
+            document.getElementById(String(i)).textContent = arr[i]
+        }
+    }else{
+        let datePicker = `${arr[0]} ${months[month]} - ${arr[arr.length - 1]} ${months[month]}`
+        document.getElementById('date_picker').textContent = datePicker
+        for (let i = 0; i < 14; i++){
+            document.getElementById(String(i)).textContent = arr[i]
         }
     }
 }
-let datePicker = `${day} ${months[firstMonth]} - ${lastDay} ${months[lastMonth]}`
-document.getElementById('date_picker').textContent = datePicker
-console.log(datePicker)
-for (let i = 0; i < 14; i++){
-    console.log(arr[i])
-    document.getElementById(String(i)).textContent = arr[i]
-}
 
+document.getElementById('button_date_right').onclick = function(){
+    if (countclick < 3){
+        day+=14
+        if (day > days[month]){
+            month++
+            day = day - days[currentDate.getMonth()]
+        }
+        if (month == 12) {
+            month = 0
+        }
+        console.log(day)
+        console.log(months[month])
+        monthGet(day, month)
+        countclick--
+    }
+}
 
 const data = [document.getElementById('0'), document.getElementById('1'), document.getElementById('2'), document.getElementById('3'),
 document.getElementById('4'), document.getElementById('5'), document.getElementById('6'), document.getElementById('7'),

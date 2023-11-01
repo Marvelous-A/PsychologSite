@@ -9,18 +9,18 @@
         <div class='type_therapy' id='calendar'>
             <h3>Выберите время</h3>
             <div id="date_picker_choice">
-                <button id="button_date_left">l</button>
+                <button id="button_date_left">&lt;</button>
                 <h3 id="date_picker"></h3>
-                <button id="button_date_right">r</button>
+                <button id="button_date_right">&gt;</button>
             </div>
             <div class='weeks'>
-                <div class="week_day">пн</div>
-                <div class="week_day">вт</div>
-                <div class="week_day">ср</div>
-                <div class="week_day">чт</div>
-                <div class="week_day">пт</div>
-                <div class="week_day">сб</div>
-                <div class="week_day">вс</div>
+                <div class="week_day" id='20'>пн</div>
+                <div class="week_day" id='21'>вт</div>
+                <div class="week_day" id='22'>ср</div>
+                <div class="week_day" id='23'>чт</div>
+                <div class="week_day" id='24'>пт</div>
+                <div class="week_day" id='25'>сб</div>
+                <div class="week_day" id='26'>вс</div>
             </div>
             <div class='weeks'>
                 <div id='0' class="week_day_num"></div>
@@ -45,8 +45,7 @@
             <h4>Информация о сессии</h4>
             <form method="post"> <!-- Проверка value -->
                 {% csrf_token %}
-                <input id="calendar_input"  value="" name="date">
-                {% comment %} hidden {% endcomment %}
+                <input id="calendar_input" hidden  value="" name="date">
                 {% comment %} <p>{{form.data.value}}</p> {% endcomment %}
                 <h4 class='Cost_h4'>Стоимость: {{Author_features.amount_reception}} ₽</h4>
                 <button class='further' type='submit'> 

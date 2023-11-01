@@ -351,6 +351,7 @@ body {
     margin-right: 60px;
     background: none;
     border: none;
+    font-size: 25px;
 }
 
 #button_date_right {
@@ -358,6 +359,8 @@ body {
     margin-left: 60px;
     background: none;
     border: none;
+    font-size: 25px;
+
 }
 
 #date_picker {
