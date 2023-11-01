@@ -61,7 +61,7 @@ document.getElementById('button_date_right').onclick = function(){
         console.log(day)
         console.log(months[month])
         monthGet(day, month)
-        countclick--
+        //countclick++
     }
 }
 
