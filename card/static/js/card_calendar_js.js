@@ -8,36 +8,45 @@ let day = currentDate.getDate()
 const year = currentDate.getFullYear()
 let month = currentDate.getMonth()
 let weekArr = week[currentDate.getDay()]
-for (let i = 0; i < 7; i++){
+for (let i = 0; i < 7; i++){                         // Вывод дней недели
     document.getElementById(String(i+20)).textContent = weekArr[i]
 }
-console.log(weekArr)
-let arr = []
-let countclick = 0
+let countclick = 0               // Счётчик прерхода по неделям
 
-if ((year % 4 == 0) && (year % 100 != 0)){
+if ((year % 4 == 0) && (year % 100 != 0)){ // Проверка на високосный год
     days[1] = 29
-} else{ 
+} else {
     days[1] = 28
 }
 
 monthGet(day, month)
 
 function monthGet(day, month){
+    let arr = []
     let countDays = 0;
-    for (let i = day; i <= 14; i++){
-        arr.push(i)
-        countDays++
+    for (let i = day; i <= day+13; i++){  // В массив добовляются дни от текущего до двух недель вперёд при том, что в месяце будет хватать дней
+        if (i <= days[month]){
+            arr.push(i)
+            countDays++
+        }
     }
-    if (countDays < 14){
-        month++
-        for (let i = 1; i <= (14 - countDays); i++){
+    if (countDays < 14){ // Если дней месяце не хватило
+        month++          // Переход на следующий месяц
+        for (let i = 1; i <= (14 - countDays); i++){ // В массив добовляются дни от 1-ого числа нового месяца до оставшихся дней
             arr.push(i)
         }
-        let datePicker = `${arr[0]} ${months[month-1]} - ${arr[arr.length - 1]} ${months[month]}`
-        document.getElementById('date_picker').textContent = datePicker
-        for (let i = 0; i < 14; i++){
-            document.getElementById(String(i)).textContent = arr[i]
+        if (months[month] == undefined){ // проверка на Январь / Вывод с какого по какое число показывает календарь
+            let datePicker = `${arr[0]} ${months[month-1]} - ${arr[arr.length - 1]} ${months[0]}`
+            document.getElementById('date_picker').textContent = datePicker
+            for (let i = 0; i < 14; i++){
+                document.getElementById(String(i)).textContent = arr[i]
+            }
+        } else {
+            let datePicker = `${arr[0]} ${months[month-1]} - ${arr[arr.length - 1]} ${months[month]}`
+            document.getElementById('date_picker').textContent = datePicker
+            for (let i = 0; i < 14; i++){
+                document.getElementById(String(i)).textContent = arr[i]
+            }
         }
     }else{
         let datePicker = `${arr[0]} ${months[month]} - ${arr[arr.length - 1]} ${months[month]}`
@@ -48,8 +57,8 @@ function monthGet(day, month){
     }
 }
 
-document.getElementById('button_date_right').onclick = function(){
-    if (countclick < 3){
+document.getElementById('button_date_right').onclick = function(){ // Переход на следующие две недели
+    if (countclick < 3){ // Проверка счётчика
         day+=14
         if (day > days[month]){
             month++
@@ -58,13 +67,25 @@ document.getElementById('button_date_right').onclick = function(){
         if (month == 12) {
             month = 0
         }
-        console.log(day)
-        console.log(months[month])
         monthGet(day, month)
-        //countclick++
+        countclick++
     }
 }
 
+document.getElementById('button_date_left').onclick = function(){ // Переход на предыдущие две недели
+    if (countclick > 0){ // Проверка счётчика
+        if (day < 14){
+            month--
+            day = days[month] - (14 - day)
+        } else {
+            day-=14
+        }   
+        monthGet(day, month)
+        countclick--
+    }
+}
+
+// Отмечание выбраного дня
 const data = [document.getElementById('0'), document.getElementById('1'), document.getElementById('2'), document.getElementById('3'),
 document.getElementById('4'), document.getElementById('5'), document.getElementById('6'), document.getElementById('7'),
 document.getElementById('8'), document.getElementById('9'), document.getElementById('10'), document.getElementById('11'),
