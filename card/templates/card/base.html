@@ -14,12 +14,18 @@
 <body>
     <header>
         <p>alter</p>
-        <div id="button_header">
-            <a id='admin'>admin</a>
-            <br>
-            {% comment %} <div class='button_header' ><a href="{% url 'customers' %}">customers</a></div> {% endcomment %}
-            <a id='customers' href="{% url 'customers' %}">customers</a>
-        </div>
+        {% if user.is_authenticated %}
+            <div id="button_header">
+                <div><a id='admin'>admin</a></div>
+                {% comment %} <div class='button_header' ><a href="{% url 'customers' %}">customers</a></div> {% endcomment %}
+                <div><a id='customers' href="{% url 'customers' %}">customers</a></div>
+                <div><a id='logout' href="{% url 'logout' %}">Log out</a></div>
+            </div>
+        {% else %}
+            <div id="button_header">
+                <div><a id='login' href="{% url 'login' %}">Login</a></div>
+            </div>
+        {% endif %}
     </header>
 
     {% block content %}
