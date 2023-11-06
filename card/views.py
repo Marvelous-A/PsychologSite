@@ -34,12 +34,14 @@ def add_order_2(request):
     return render(request, 'card/add_order_2.html', {'Author_features': features})
 
 def add_order_3(request):
+    import datetime
     features = Author.objects.last()
-    print()
     if request.method == 'POST':
         request.POST = request.POST.copy() # делаем POST изменяемым чтобы добавить последние 2 недобавленных параметра 
-        request.POST['date'] = request.session.get('date') # <= добавили в основной POST запрос, поля которые тянутся с прошлых этапо
         request.POST['view_lesson'] = request.session.get('view_lesson') # <= добавили в основной POST запрос, поля которые тянутся с прошлых этапо
+        
+        request.POST['date'] = request.session.get('date') # <= добавили в основной POST запрос, поля которые тянутся с прошлых этапо
+        
         form = OrderForm(request.POST)# <= передали конечный запрос вместе с теми полями который заполняли в прошлых 2 шагах
         if form.is_valid():
             form.save()
@@ -47,6 +49,7 @@ def add_order_3(request):
             print(form.errors.as_data())
         return redirect('main_list')
     else:
+        Order.objects.all()
         form = OrderForm()
     return render(request, 'card/add_order_3.html', {'Author_features': features, 'form':form})
 

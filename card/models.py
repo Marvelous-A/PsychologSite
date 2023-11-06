@@ -47,15 +47,16 @@ class Order(models.Model):
                 self.validate_number = True
             else:
                 self.validate_number = False
-        except phonenumbers.phonenumberutil.NumberParseException:
+        except phonenumbers.phonenumberutil.NumberParseException as e:
+            print(e)
             self.validate_number = False
 
     def email_validate(self): # Допишешь обработку формы
-        pass
+        return True
 
     def save(self, *args, **kwargs):
-        #self.validate_phone_number()
-        super().save(*args, **kwargs)
+        if self.validate_phone_number() and self.email_validate():
+            super().save(*args, **kwargs)
 
     def __str__(self):
         return f'Tel: {self.phone} | email: {self.email}'

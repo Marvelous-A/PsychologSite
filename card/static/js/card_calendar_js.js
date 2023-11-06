@@ -94,86 +94,86 @@ let dataCon = 0
 var calendarInput = document.getElementById("calendar_input")
 
 data[0].addEventListener('click', function(){
-    data[dataCon].classList.remove('check_week_day_num')
+    data[dataCon].classList.remove('check_week_day_num')    
     data[0].classList.add('check_week_day_num')
     dataCon = 0
-    calendarInput.value=data[0].textContent
+    calendarInput.value=data[0].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[1].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[1].classList.add('check_week_day_num')
     dataCon = 1
-    calendarInput.value=data[1].textContent
+    calendarInput.value=data[1].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[2].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[2].classList.add('check_week_day_num')
     dataCon = 2
-    calendarInput.value=data[2].textContent
+    calendarInput.value=data[2].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[3].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[3].classList.add('check_week_day_num')
     dataCon = 3
-    calendarInput.value=data[3].textContent
+    calendarInput.value=data[3].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[4].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[4].classList.add('check_week_day_num')
     dataCon = 4
-    calendarInput.value=data[4].textContent
+    calendarInput.value=data[4].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[5].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[5].classList.add('check_week_day_num')
     dataCon = 5
-    calendarInput.value=data[5].textContent
+    calendarInput.value=data[5].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[6].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[6].classList.add('check_week_day_num')
     dataCon = 6
-    calendarInput.value=data[6].textContent
+    calendarInput.value=data[6].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[7].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[7].classList.add('check_week_day_num')
     dataCon = 7
-    calendarInput.value=data[7].textContent
+    calendarInput.value=data[7].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[8].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[8].classList.add('check_week_day_num')
     dataCon = 8
-    calendarInput.value=data[8].textContent
+    calendarInput.value=data[8].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[9].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[9].classList.add('check_week_day_num')
     dataCon = 9
-    calendarInput.value=data[9].textContent
+    calendarInput.value=data[9].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[10].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[10].classList.add('check_week_day_num')
     dataCon = 10
-    calendarInput.value=data[10].textContent
+    calendarInput.value=data[10].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[11].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[11].classList.add('check_week_day_num')
     dataCon = 11
-    calendarInput.value=data[11].textContent
+    calendarInput.value=data[11].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[12].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[12].classList.add('check_week_day_num')
     dataCon = 12
-    calendarInput.value=data[12].textContent
+    calendarInput.value=data[12].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
 data[13].addEventListener('click', function(){
     data[dataCon].classList.remove('check_week_day_num')
     data[13].classList.add('check_week_day_num')
     dataCon = 13
-    calendarInput.value=data[13].textContent
+    calendarInput.value=data[13].textContent + '.' + String(month + 1) + '.'+ String(year)
 })
