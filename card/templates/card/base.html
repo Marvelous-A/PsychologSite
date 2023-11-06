@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <p>alter</p>
+        <p id='logo'>alter</p>
         {% if user.is_authenticated %}
             <div id="button_header">
                 <div><a id='admin'>admin</a></div>
@@ -31,8 +31,7 @@
     {% block content %}
     {% endblock %}
 
-    <div id='futor'>
-    </div>
+    <div id='footer'></div>
 </body>
 <script src={%static "js/card_js.js"%}></script>
 <script src={%static "js/card_calendar_js.js"%}></script>
