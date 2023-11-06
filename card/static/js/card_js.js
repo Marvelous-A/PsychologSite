@@ -2,14 +2,6 @@ var typeIndividual = document.getElementById('individual')
 var typeFamily = document.getElementById('Family')
 var viewLessonInput = document.getElementById('chossen_type')
 
-document.querySelector('#admin').onclick = function(){
-    window.location.replace('http://127.0.0.1:8000/admin/')
-}
-
-document.querySelector('#customers').onclick = function(){
-    window.location.replace('http://127.0.0.1:8000/customers.html/')
-}
-
 // document.getElementById("#customers").addEventListener("click", function(){
 //     window.location.href = 'http://127.0.0.1:8000/customers/';
 // });
@@ -25,3 +17,15 @@ typeFamily.addEventListener('click', function(){
     typeFamily.classList.add('check_type_therapy')
     viewLessonInput.checked = false
 })
+
+
+if (document.querySelector('#admin')){ 
+    document.querySelector('#admin').onclick = function(){
+        window.location.replace('http://127.0.0.1:8000/admin/')
+    }
+}
+if (document.querySelector('#customers')){  
+    document.querySelector('#customers').onclick = function(){
+        window.location.replace('http://127.0.0.1:8000/customers.html/')
+    }
+}
